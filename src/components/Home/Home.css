@@ -1,0 +1,13 @@
+.home-root{
+    
+    padding: 1em;
+    display: flex;
+}
+
+.home-table{
+    width: 75%;
+}
+
+.home-bar-chart{
+    width: 25%;
+}

@@ -1,0 +1,28 @@
+.sidebar-root {
+  color: white;
+  width: 12%;
+
+  z-index: 99;
+}
+
+.sidebar-main {
+  position: relative;
+  left: 0;
+  height: 100vh;
+}
+
+.sidebar-item {
+  padding: 1em;
+  text-align: center;
+
+  color: white !important;
+}
+
+.sidebar-item:hover {
+    background-color: #005386;
+    cursor: pointer;
+}
+
+.sidebar-item a {
+  color: white !important;
+}

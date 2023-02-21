@@ -2,25 +2,28 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Home from './components/Home/Home';
-import Marketing from './components/Marketing/Marketing';
+import SkuView from './components/SkuView/SkuView';
 
 import './App.css';
 import SideBar from './components/SideBar/SideBar';
+import Header from './components/Header/Header';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-{/*         <SideBar /> */}
+var App = () => {
+
+  return (
+    <div className='App'>
+      <Header />
+      <div className="main is-flex">
         <Router>
+          <SideBar />
           <Routes>
-            <Route exact path={'/'} element={<Home />}></Route>
-            <Route path={'/market'} element={<Marketing />}></Route>
+            <Route path={'/'} exact  element={<Home />}></Route>
+            <Route path={'/sku-view'} element={<SkuView />}></Route>
           </Routes>
         </Router>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default App;

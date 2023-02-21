@@ -1,5 +1,9 @@
+@import '../node_modules/bulma/css/bulma.css';
+
 .App {
   text-align: center;
+
+  background-color: #efefef;
 }
 
 
@@ -7,4 +11,9 @@ div, nav {
   font-family: 'Rubik', sans-serif;
   padding: 0;
   margin: 0;
+}
+
+.bg-color-head{
+  
+  background-color: #003555;
 }
