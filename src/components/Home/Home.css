@@ -1,13 +1,16 @@
-.home-root{
-    
-    padding: 1em;
-    display: flex;
+.home-root {
+  padding: 1em;
+  display: flex;
 }
 
-.home-table{
-    width: 75%;
+.home-table {
+  width: 75%;
 }
 
-.home-bar-chart{
-    width: 25%;
+.home-bar-chart {
+  width: 25%;
+}
+
+.table-root {
+  min-height: 50vh;
 }

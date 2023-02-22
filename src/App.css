@@ -17,3 +17,7 @@ div, nav {
   
   background-color: #003555;
 }
+
+table, th, td, tr{
+  border: 1px solid black;
+}

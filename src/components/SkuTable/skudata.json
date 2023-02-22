@@ -1,0 +1,61 @@
+{
+  "skuHeader": [
+    {
+      "Header": "Item",
+      "accessor": "item"
+    },
+    {
+      "Header": "Platform",
+      "accessor": "platform"
+    },
+    {
+      "Header": "Impression",
+      "accessor": "impression"
+    },
+    {
+      "Header": "Click",
+      "accessor": "click"
+    },
+    {
+      "Header": "Spend",
+      "accessor": "spend"
+    },
+    {
+      "Header": "Sales",
+      "accessor": "sales"
+    },
+    {
+      "Header": "Order",
+      "accessor": "order"
+    }
+  ],
+  "skuData": [
+    {
+      "item": "Red TShirt",
+      "platform": "Amazon",
+      "impression": "18,305",
+      "click": "647",
+      "spend": "32",
+      "sales": "3456",
+      "order": "56"
+    },
+    {
+      "item": "",
+      "platform": "Google",
+      "impression": "World",
+      "click": "World",
+      "spend": "World",
+      "sales": "World",
+      "order": "World"
+    },
+    {
+      "item": "",
+      "platform": "Walmart",
+      "impression": "World",
+      "click": "World",
+      "spend": "World",
+      "sales": "World",
+      "order": "World"
+    }
+  ]
+}
