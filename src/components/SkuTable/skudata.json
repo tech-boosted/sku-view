@@ -42,20 +42,47 @@
     {
       "item": "",
       "platform": "Google",
-      "impression": "World",
-      "click": "World",
-      "spend": "World",
-      "sales": "World",
-      "order": "World"
+      "impression": "31,371",
+      "click": "55",
+      "spend": "$34",
+      "sales": "$345",
+      "order": "59"
     },
     {
       "item": "",
       "platform": "Walmart",
-      "impression": "World",
-      "click": "World",
-      "spend": "World",
-      "sales": "World",
-      "order": "World"
+      "impression": "53,264",
+      "click": "83",
+      "spend": "$12",
+      "sales": "$799",
+      "order": "647"
+    },
+    {
+      "item": "Blue TShirt",
+      "platform": "Amazon",
+      "impression": "18,305",
+      "click": "647",
+      "spend": "32",
+      "sales": "3456",
+      "order": "56"
+    },
+    {
+      "item": "",
+      "platform": "Google",
+      "impression": "31,371",
+      "click": "55",
+      "spend": "$34",
+      "sales": "$345",
+      "order": "59"
+    },
+    {
+      "item": "",
+      "platform": "Walmart",
+      "impression": "53,264",
+      "click": "83",
+      "spend": "$12",
+      "sales": "$799",
+      "order": "647"
     }
   ]
 }

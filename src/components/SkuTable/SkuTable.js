@@ -1,7 +1,15 @@
 import React from "react";
+import Table from '@mui/material/Table'
+
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+
+
 import { useTable } from 'react-table';
 import skudata from './skudata.json';
-import "./SkuTable";
+import "./SkuTable.css";
 
 console.log("skudata: ", skudata);
 console.log("skudata.skuHeader: ", skudata.skuHeader);
@@ -10,62 +18,47 @@ var headers = skudata.skuHeader;
 var tableData = skudata.skuData;
 
 const SkuTable = () => {
-    const data = React.useMemo(() => tableData,[])
+    const data = React.useMemo(() => tableData, [])
 
-    const columns = React.useMemo(() => headers,[])
+    const columns = React.useMemo(() => headers, [])
 
     const {
         getTableProps,
-        getTableBodyProps,
         headerGroups,
         rows,
         prepareRow,
     } = useTable({ columns, data })
 
     return (
-        <table {...getTableProps()} style={{ border: 'solid 1px black' }}>
-            <thead>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table"{...getTableProps()} className="skutable-root">
+            <TableHead >
                 {headerGroups.map(headerGroup => (
-                    <tr {...headerGroup.getHeaderGroupProps()}>
-                        {headerGroup.headers.map((column) => 
-                        (
-                            <th
-                                {...column.getHeaderProps()}
-                                style={{
-                                    padding: '1em',
-                                    border: 'solid 1px gray',
-                                    color: 'black'
-                                }}
-                            >
+                    <TableRow {...headerGroup.getHeaderGroupProps()}>
+                        {headerGroup.headers.map(column => (
+                            <TableCell {...column.getHeaderProps()} >
                                 {column.render('Header')}
-                            </th>
+                            </TableCell>
                         ))}
-                    </tr>
+                    </TableRow>
                 ))}
-            </thead>
-            <tbody {...getTableBodyProps()}>
-                {rows.map(row => {
+            </TableHead>
+            <TableBody>
+                {rows.map((row, i) => {
                     prepareRow(row)
                     return (
-                        <tr {...row.getRowProps()}>
+                        <TableRow {...row.getRowProps()}>
                             {row.cells.map(cell => {
                                 return (
-                                    <td
-                                        {...cell.getCellProps()}
-                                        style={{
-                                            padding: '5px 2px',
-                                            border: 'solid 1px gray'
-                                        }}
-                                    >
+                                    <TableCell {...cell.getCellProps()} size="small">
                                         {cell.render('Cell')}
-                                    </td>
+                                    </TableCell>
                                 )
                             })}
-                        </tr>
+                        </TableRow>
                     )
                 })}
-            </tbody>
-        </table>
+            </TableBody>
+        </Table>
     )
 }
 

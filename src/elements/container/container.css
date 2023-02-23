@@ -1,10 +1,25 @@
 .custom-container{
     border-radius: 5px;
     background-color: #ffffff;
-    padding: 1em;
-
-    margin: 0.5em;
+    color: #00002c;
+    margin: 1em;
+    margin-bottom: 2em;
+    margin-right: 2em;
 }
 
 .custom-container-main{
+}
+
+.custom-container-header{
+    padding: 1em;
+    border-bottom: 1px solid #c3c3c3;
+    text-align: left;
+
+    font-weight: 700;
+    font-size: 0.85em;
+}
+
+.custom-container-body{
+    padding: 1.5em;
+
 }

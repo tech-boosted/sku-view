@@ -26,7 +26,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 
 const SkuPie = () => {
     return (
-        <ResponsiveContainer width={300} height={300}>
+        <ResponsiveContainer width={250} height={200}>
             <PieChart>
                 <Pie
                     data={data}
