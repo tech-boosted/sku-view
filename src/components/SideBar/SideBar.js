@@ -1,61 +1,75 @@
-import React from 'react';
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import sidebarData from './sidebar.json';
-
-// import './SideBar.css';
+import sidebarData from './sidebar.json'
 
 const renderLinks = () => {
-    var arr = [];
-    sidebarData.sidebarOptions.map((e, i) => {
-        arr.push(
-            <div key={i}>
-                <Link to={e.link}>
-                    {e.name}
-                </Link>
-            </div>
-        )
-    })
-    return arr;
+  var arr = []
+  sidebarData.sidebarOptions.map((e, i) => {
+    arr.push(
+      <div key={i}>
+        <Link to={e.link}>{e.name}</Link>
+      </div>
+    )
+  })
+  return arr
 }
 
 const SideBar = () => {
-    return (
-        <aside className="menu">
-            <p className="menu-label">
-                General
-            </p>
-            <ul className="menu-list">
-                <li><a>Dashboard</a></li>
-                <li><a>Customers</a></li>
-            </ul>
-            <p className="menu-label">
-                Administration
-            </p>
-            <ul className="menu-list">
-                <li><a>Team Settings</a></li>
-                <li>
-                    <a className="is-active">Manage Your Team</a>
-                    <ul>
-                        <li><a>Members</a></li>
-                        <li><a>Plugins</a></li>
-                        <li><a>Add a member</a></li>
-                    </ul>
-                </li>
-                <li><a>Invitations</a></li>
-                <li><a>Cloud Storage Environment Settings</a></li>
-                <li><a>Authentication</a></li>
-            </ul>
-            <p className="menu-label">
-                Transactions
-            </p>
-            <ul className="menu-list">
-                <li><a>Payments</a></li>
-                <li><a>Transfers</a></li>
-                <li><a>Balance</a></li>
-            </ul>
-        </aside>
-    )
+  return (
+    <aside className='menu'>
+      <p className='menu-label'>General</p>
+      <ul className='menu-list'>
+        <li>
+          <a>Dashboard</a>
+        </li>
+        <li>
+          <a>Customers</a>
+        </li>
+      </ul>
+      <p className='menu-label'>Administration</p>
+      <ul className='menu-list'>
+        <li>
+          <a>Team Settings</a>
+        </li>
+        <li>
+          <a className='is-active'>Manage Your Team</a>
+          <ul>
+            <li>
+              <a>Members</a>
+            </li>
+            <li>
+              <a>Plugins</a>
+            </li>
+            <li>
+              <a>Add a member</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a>Invitations</a>
+        </li>
+        <li>
+          <a>Cloud Storage Environment Settings</a>
+        </li>
+        <li>
+          <a>Authentication</a>
+        </li>
+      </ul>
+      <p className='menu-label'>Transactions</p>
+      <ul className='menu-list'>
+        <li>
+          <a>Payments</a>
+        </li>
+        <li>
+          <a>Transfers</a>
+        </li>
+        <li>
+          <a>Balance</a>
+        </li>
+      </ul>
+    </aside>
+  )
 }
 
-export default SideBar;
+export default SideBar

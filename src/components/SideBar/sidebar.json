@@ -1,16 +1,16 @@
 {
-    "sidebarOptions": [
-        {
-            "name": "Overview",
-            "link": "/"
-        },
-        {
-            "name": "Sku-View",
-            "link": "/sku-view"
-        },
-        {
-            "name": "Reports",
-            "link": "/reports"
-        }
-    ]
+  "sidebarOptions": [
+    {
+      "name": "Overview",
+      "link": "/"
+    },
+    {
+      "name": "Sku-View",
+      "link": "/sku-view"
+    },
+    {
+      "name": "Reports",
+      "link": "/reports"
+    }
+  ]
 }
