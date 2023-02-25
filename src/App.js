@@ -11,9 +11,9 @@ import Header from './components/Header/Header';
 var App = () => {
 
   return (
-    <div className='App'>
+    <div>
       <Header />
-      <div className="main is-flex">
+      <div>
         <Router>
           <SideBar />
           <Routes>

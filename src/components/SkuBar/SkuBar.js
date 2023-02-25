@@ -2,7 +2,6 @@ import { Tooltip } from '@mui/material';
 import React from 'react';
 import { Bar, BarChart, CartesianGrid, Legend, XAxis, YAxis } from 'recharts';
 import data from '../data.json';
-import './SkuBar.css'
 
 const SkuBar = () => {
     return (

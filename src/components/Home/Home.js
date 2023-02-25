@@ -3,25 +3,25 @@ import Container from "../../elements/container/container";
 
 import SkuBar from "../SkuBar/SkuBar";
 import SkuTable from "../SkuTable/SkuTable";
-import './Home.css';
+
 import SkuPie from "../SkuPie/SkuPie";
 
 const Home = () => {
     return (
-        <div className="container home-root">
-            <div className="home-table">
+        <div>
+            <div>
                 <Container title="Total Business Performance">
-                    <div className="table-root">
+                    <div>
                         <SkuBar />
                     </div>
                 </Container>
                 <Container title="SKU Platform Wise">
-                    <div className="table-root">
+                    <div>
                         <SkuTable />
                     </div>
                 </Container>
             </div>
-            <div className="home-bar-chart">
+            <div>
                 <Container title="Advertising Performance by Campaign Type">
                     <SkuPie />
                 </Container>

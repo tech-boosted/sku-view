@@ -9,7 +9,6 @@ import TableRow from '@mui/material/TableRow';
 
 import { useTable } from 'react-table';
 import skudata from './skudata.json';
-import "./SkuTable.css";
 
 console.log("skudata: ", skudata);
 console.log("skudata.skuHeader: ", skudata.skuHeader);
@@ -30,7 +29,7 @@ const SkuTable = () => {
     } = useTable({ columns, data })
 
     return (
-        <Table sx={{ minWidth: 650 }} aria-label="simple table"{...getTableProps()} className="skutable-root">
+        <Table sx={{ minWidth: 650 }} aria-label="simple table"{...getTableProps()}>
             <TableHead >
                 {headerGroups.map(headerGroup => (
                     <TableRow {...headerGroup.getHeaderGroupProps()}>

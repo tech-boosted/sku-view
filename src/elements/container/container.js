@@ -1,16 +1,15 @@
 import React from "react";
-import './container.css';
 
 var Container = (props) => {
     return (
-        <div className="custom-container">
-            <div className="custom-container-main">
-                <div className="custom-container-header">
-                    <div className="custom-container-header-title">
+        <div>
+            <div>
+                <div>
+                    <div>
                         {props.title}
                     </div>
                 </div>
-                <div className="custom-container-body">
+                <div>
                     {props.children}
                 </div>
             </div>
