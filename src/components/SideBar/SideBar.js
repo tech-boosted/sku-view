@@ -1,16 +1,39 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import sidebarData from './sidebar.json'
+import linksData from '../Links.json'
+
+const renderSublinks = (subLinks) => {
+  var subArr = []
+  subLinks.forEach((so, j) => {
+    subArr.push(
+      <li key={j}>
+        <Link to={so.link}>{so.name}</Link>
+      </li>
+    )
+  })
+  return subArr
+}
 
 const renderLinks = () => {
   var arr = []
-  sidebarData.sidebarOptions.map((e, i) => {
-    arr.push(
-      <div key={i}>
-        <Link to={e.link}>{e.name}</Link>
-      </div>
-    )
+  linksData.links.forEach((e, i) => {
+    if (e.link !== undefined) {
+      arr.push(
+        <li key={i}>
+          <Link to={e.link}>{e.name}</Link>
+        </li>
+      )
+    } else if (Array.isArray(e.subLinks)) {
+      arr.push(
+        <li key={i}>
+          <a href="#">{e.name}</a>
+          <ul>
+            {renderSublinks(e.subLinks)}
+          </ul>
+        </li>
+      )
+    }
   })
   return arr
 }
@@ -18,55 +41,8 @@ const renderLinks = () => {
 const SideBar = () => {
   return (
     <aside className='menu'>
-      <p className='menu-label'>General</p>
       <ul className='menu-list'>
-        <li>
-          <a>Dashboard</a>
-        </li>
-        <li>
-          <a>Customers</a>
-        </li>
-      </ul>
-      <p className='menu-label'>Administration</p>
-      <ul className='menu-list'>
-        <li>
-          <a>Team Settings</a>
-        </li>
-        <li>
-          <a className='is-active'>Manage Your Team</a>
-          <ul>
-            <li>
-              <a>Members</a>
-            </li>
-            <li>
-              <a>Plugins</a>
-            </li>
-            <li>
-              <a>Add a member</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a>Invitations</a>
-        </li>
-        <li>
-          <a>Cloud Storage Environment Settings</a>
-        </li>
-        <li>
-          <a>Authentication</a>
-        </li>
-      </ul>
-      <p className='menu-label'>Transactions</p>
-      <ul className='menu-list'>
-        <li>
-          <a>Payments</a>
-        </li>
-        <li>
-          <a>Transfers</a>
-        </li>
-        <li>
-          <a>Balance</a>
-        </li>
+        {renderLinks()}
       </ul>
     </aside>
   )

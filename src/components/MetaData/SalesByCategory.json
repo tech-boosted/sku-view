@@ -1,0 +1,5 @@
+{
+  "title": "Sales by category",
+  "class": "",
+  "columns": ["Category", "Sales", "Units"]
+}

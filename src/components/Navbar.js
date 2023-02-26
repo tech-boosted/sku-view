@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-
+import Icon from '@mdi/react';
+import { mdiAccount , mdiCog , mdiBell } from '@mdi/js';
 
 
 const Navbar = () => {
@@ -7,9 +8,9 @@ const Navbar = () => {
   const [isActiveClass, toggleClass] = useState("");
 
   const onclick = () => {
-    if(isActiveClass == ""){
+    if (isActiveClass == "") {
       toggleClass("is-active");
-    }else{
+    } else {
       toggleClass("");
     }
   };
@@ -23,7 +24,7 @@ const Navbar = () => {
       <div className='navbar-brand'>
         <a
           className='navbar-item'
-          href='https://bulma.io'
+          href='/'
         >
           <img
             src='https://bulma.io/images/bulma-logo.png'
@@ -38,7 +39,7 @@ const Navbar = () => {
           aria-label='menu'
           aria-expanded='false'
           data-target='navbarBasicExample'
-          onClick={()=>onclick()}
+          onClick={() => onclick()}
         >
           <span aria-hidden='true'></span>
           <span aria-hidden='true'></span>
@@ -51,28 +52,26 @@ const Navbar = () => {
         className={'navbar-menu ' + isActiveClass}
       >
         <div className='navbar-start'>
-          <a className='navbar-item'>Home</a>
+          <a className='navbar-item' href='/'>Dashboard</a>
 
-          <a className='navbar-item'>Documentation</a>
+          <a className='navbar-item' href='/my-channels'>My Channels</a>
 
-          <div className='navbar-item has-dropdown is-hoverable'>
-            <a className='navbar-link'>More</a>
-
-            <div className='navbar-dropdown'>
-              <a className='navbar-item'>About</a>
-              <a className='navbar-item'>Jobs</a>
-              <a className='navbar-item'>Contact</a>
-              <hr className='navbar-divider' />
-              <a className='navbar-item'>Report an issue</a>
-            </div>
-          </div>
+          <a className='navbar-item' href='/reports'>Reports</a>
         </div>
 
         <div className='navbar-end'>
-          <div className='navbar-item'></div>
+          <div className='navbar-item'>
+            <Icon path={mdiBell} size={1} />
+          </div>
+          <div className='navbar-item'>
+            <Icon path={mdiCog} size={1} />
+          </div>
+          <div className='navbar-item'>
+            <Icon path={mdiAccount} size={1} />
+          </div>
         </div>
       </div>
-    </nav>
+    </nav >
   )
 }
 

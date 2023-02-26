@@ -1,0 +1,6 @@
+{
+    "title": "Worst Sellers",
+    "class": "",
+    "columns": ["Product", "Days Since Last Sale", "Inventory"]
+  }
+  

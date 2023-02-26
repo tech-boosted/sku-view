@@ -1,0 +1,5 @@
+{
+  "title": "Top Sellers",
+  "class": "",
+  "columns": ["Product", "Sales", "Units Sold"]
+}
