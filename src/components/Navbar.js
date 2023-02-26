@@ -1,6 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+
 
 const Navbar = () => {
+
+  const [isActiveClass, toggleClass] = useState("");
+
+  const onclick = () => {
+    if(isActiveClass == ""){
+      toggleClass("is-active");
+    }else{
+      toggleClass("");
+    }
+  };
+
   return (
     <nav
       className='navbar is-fixed-top'
@@ -21,10 +34,11 @@ const Navbar = () => {
 
         <a
           role='button'
-          className='navbar-burger'
+          className={'navbar-burger ' + isActiveClass}
           aria-label='menu'
           aria-expanded='false'
           data-target='navbarBasicExample'
+          onClick={()=>onclick()}
         >
           <span aria-hidden='true'></span>
           <span aria-hidden='true'></span>
@@ -34,7 +48,7 @@ const Navbar = () => {
 
       <div
         id='navbarBasicExample'
-        className='navbar-menu'
+        className={'navbar-menu ' + isActiveClass}
       >
         <div className='navbar-start'>
           <a className='navbar-item'>Home</a>

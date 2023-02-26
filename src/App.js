@@ -1,10 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import './App.css'
 import SideBar from './components/SideBar/SideBar'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
+
+import './App.scss'
+import Main from './components/Main'
 
 var App = () => {
   return (
@@ -20,15 +22,17 @@ var App = () => {
                 <SideBar />
               </div>
 
-              <div className='column'>
-                <Routes>
-                  <Route
-                    path={'/'}
-                    exact
-                    element={<Home />}
-                  ></Route>
-                </Routes>
-              </div>
+              <Main>
+                <div className='column'>
+                  <Routes>
+                    <Route
+                      path={'/'}
+                      exact
+                      element={<Home />}
+                    ></Route>
+                  </Routes>
+                </div>
+              </Main>
             </div>
           </Router>
         </div>

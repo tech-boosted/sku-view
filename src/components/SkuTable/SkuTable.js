@@ -6,7 +6,7 @@ import React from 'react'
 // import TableRow from '@mui/material/TableRow'
 
 // import { useTable } from 'react-table'
-import skudata from './skudata.json'
+// import skudata from './skudata.json'
 
 // var headers = skudata.skuHeader
 // var tableData = skudata.skuData
