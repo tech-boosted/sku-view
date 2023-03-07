@@ -1,9 +1,11 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import { Link } from 'react-router-dom'
+import linksData from '../Menu'
+import Icon from '@mdi/react';
+import "./SideBar.scss";
 
-import linksData from '../Links.json'
-
-const renderSublinks = (subLinks) => {
+/* const renderSublinks = (subLinks) => {
   var subArr = []
   subLinks.forEach((so, j) => {
     subArr.push(
@@ -13,18 +15,24 @@ const renderSublinks = (subLinks) => {
     )
   })
   return subArr
-}
+} */
 
 const renderLinks = () => {
   var arr = []
   linksData.links.forEach((e, i) => {
     if (e.link !== undefined) {
       arr.push(
-        <li key={i}>
-          <Link to={e.link}>{e.name}</Link>
-        </li>
+        <Link to={e.link}>
+          <div key={i} className="is-flex is-flex-direction-row is-align-items-center p-2">
+            <Icon path={e.icon} size={1} />
+            <div className="menu-item px-2">
+              {e.name}
+            </div>
+          </div>
+        </Link>
       )
-    } else if (Array.isArray(e.subLinks)) {
+    } 
+/*     else if (Array.isArray(e.subLinks)) {
       arr.push(
         <li key={i}>
           <a href="#">{e.name}</a>
@@ -33,7 +41,7 @@ const renderLinks = () => {
           </ul>
         </li>
       )
-    }
+    } */
   })
   return arr
 }
@@ -41,7 +49,10 @@ const renderLinks = () => {
 const SideBar = () => {
   return (
     <aside className='menu'>
-      <ul className='menu-list'>
+      <div className="logo px-4 py-5">
+        <img src='https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg' alt='' className='logo-img' />
+      </div>
+      <ul className='menu-list p-4'>
         {renderLinks()}
       </ul>
     </aside>

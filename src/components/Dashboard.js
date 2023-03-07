@@ -1,65 +1,94 @@
 import React from 'react'
 import Card from './Card'
-import BarChart from './Charts/BarChart'
-import PieChart from './Charts/PieChart'
-import MyTable from './MyTable/MyTable'
+import MyBarChart from './Charts/MyBarChart'
+// import BarChart from './Charts/BarChart'
+// import PieChart from './Charts/PieChart'
+import MyPieChart from './Charts/MyPieChart'
+import Table from './Table/Table'
 
-import SkuPlatformWise from './MetaData/SkuPlatformWise.json';
-import AdvCampaignPerformance from './MetaData/AdvCampaignPerformance.json';
-import SalesByCategory from './MetaData/SalesByCategory.json';
-import SalesByBrand from './MetaData/SalesByBrand.json';
-import TopSellers from './MetaData/TopSellers.json';
-import WorstSellers from './MetaData/WorstSellers.json';
+import SkuPlatformWise from './TableMetaData/SkuPlatformWise.json';
+import AdvCampaignPerformance from './TableMetaData/AdvCampaignPerformance.json';
+import SalesByCategory from './TableMetaData/SalesByCategory.json';
+import SalesByBrand from './TableMetaData/SalesByBrand.json';
+import TopSellers from './TableMetaData/TopSellers.json';
+import WorstSellers from './TableMetaData/WorstSellers.json';
+import AreaChart from './Charts/AreaChart'
+import LineChart from './Charts/LineChart'
+import PeriodDropDown from './PeriodDropDown'
+import DoughnutChart from './Charts/DoughnutChart'
 
-const Home = () => {
+const Dashboard = () => {
   return (
     <div>
+      <PeriodDropDown />
       <div className='columns'>
         <div className='column'>
           <Card title='Total Business Performance'>
-            <BarChart />
+            <MyBarChart />
           </Card>
         </div>
+
         <div className='column'>
-          <Card title='Advertising Performance by Campaign Type'>
-            <PieChart />
+          <Card title='Sales By Product'>
+            <AreaChart />
           </Card>
         </div>
       </div>
 
       <div className='columns'>
+        <div className='column is-4'>
+          <Card title='Advertising Performance by Campaign Type'>
+            <MyPieChart />
+          </Card>
+        </div>
+
         <div className='column'>
+          <Card title='Sales By Category'>
+            <LineChart />
+          </Card>
+        </div>
+      </div>
+
+
+      <div className='columns'>
+        <div className='column is-8'>
           <Card title={AdvCampaignPerformance.title}>
-            <MyTable
+            <Table
               customTableClass={AdvCampaignPerformance.class}
               columns={AdvCampaignPerformance.columns}
             />
           </Card>
         </div>
+
         <div className='column'>
+          <Card title='Sales By Group'>
+            <DoughnutChart />
+          </Card>
+        </div>
+      </div>
+
+      {/*       <div className='column'>
           <Card title={SalesByCategory.title}>
-            <MyTable
+            <Table
               customTableClass={SalesByCategory.class}
               columns={SalesByCategory.columns}
             />
           </Card>
         </div>
-      </div>
-
 
       <div className='block'>
         <Card title={SalesByBrand.title}>
-          <MyTable
+          <Table
             customTableClass={SalesByBrand.class}
             columns={SalesByBrand.columns}
           />
         </Card>
-      </div>
+      </div> */}
 
-      <div className='columns'>
+      {/*       <div className='columns'>
         <div className='column'>
           <Card title={TopSellers.title}>
-            <MyTable
+            <Table
               customTableClass={TopSellers.class}
               columns={TopSellers.columns}
             />
@@ -67,7 +96,7 @@ const Home = () => {
         </div>
         <div className='column'>
           <Card title={WorstSellers.title}>
-            <MyTable
+            <Table
               customTableClass={WorstSellers.class}
               columns={WorstSellers.columns}
             />
@@ -77,14 +106,14 @@ const Home = () => {
 
       <div className='block'>
         <Card title={SkuPlatformWise.title}>
-          <MyTable
+          <Table
             customTableClass={SkuPlatformWise.class}
             columns={SkuPlatformWise.columns}
           />
         </Card>
-      </div>
+      </div> */}
     </div>
   )
 }
 
-export default Home
+export default Dashboard

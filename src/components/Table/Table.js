@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MyTable = (props) => {
+const Table = (props) => {
 
   var columns = props.columns;
   var columnLength = props.columns.length;
@@ -39,7 +39,7 @@ const MyTable = (props) => {
 
   return (
     <div>
-      <table className={'table is-fullwidth is-hoverable ' + props.customTableClass}>
+      <table className={'table is-fullwidth is-hoverable is-bordered ' + props.customTableClass}>
         <thead>
           <tr>
             {renderColumns()}
@@ -54,4 +54,4 @@ const MyTable = (props) => {
   )
 }
 
-export default MyTable
+export default Table;

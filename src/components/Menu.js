@@ -1,5 +1,20 @@
-{
-  "links": [
+import { mdiGoogleAnalytics } from '@mdi/js';
+import { mdiTable } from '@mdi/js';
+
+const Menu = {
+  links: [
+    {
+      "name": "Business Intelligence",
+      "link": "/",
+      "icon": mdiGoogleAnalytics
+    },
+    {
+      "name": "Business Insights",
+      "link": "/business-insights",
+      "icon": mdiTable
+    }
+  ],
+  merchant_spring_links: [
     {
       "name": "Channel Overview",
       "link": "/"
@@ -90,3 +105,5 @@
     }
   ]
 }
+
+export default Menu;
