@@ -22,8 +22,8 @@ const renderLinks = () => {
   linksData.links.forEach((e, i) => {
     if (e.link !== undefined) {
       arr.push(
-        <Link to={e.link}>
-          <div key={i} className="is-flex is-flex-direction-row is-align-items-center p-2">
+        <Link to={e.link}  key={i}>
+          <div className="is-flex is-flex-direction-row is-align-items-center p-2">
             <Icon path={e.icon} size={1} />
             <div className="menu-item px-2">
               {e.name}

@@ -1,21 +1,18 @@
 import React from 'react'
 import Card from './Card'
-import MyBarChart from './Charts/MyBarChart'
-// import BarChart from './Charts/BarChart'
-// import PieChart from './Charts/PieChart'
-import MyPieChart from './Charts/MyPieChart'
+
+import MyPieChart from './ChartJS/DefaultPieChart'
+import AreaChart from './ChartJS/DefaultAreaChart'
+
 import Table from './Table/Table'
 
-import SkuPlatformWise from './TableMetaData/SkuPlatformWise.json';
 import AdvCampaignPerformance from './TableMetaData/AdvCampaignPerformance.json';
-import SalesByCategory from './TableMetaData/SalesByCategory.json';
-import SalesByBrand from './TableMetaData/SalesByBrand.json';
-import TopSellers from './TableMetaData/TopSellers.json';
-import WorstSellers from './TableMetaData/WorstSellers.json';
-import AreaChart from './Charts/AreaChart'
-import LineChart from './Charts/LineChart'
+
 import PeriodDropDown from './PeriodDropDown'
-import DoughnutChart from './Charts/DoughnutChart'
+import DashboardItem01 from './DashboardItem01'
+import DashboardItem02 from './DashboardItem02'
+import DashboardItem03 from './DashboardItem03'
+
 
 const Dashboard = () => {
   return (
@@ -24,15 +21,22 @@ const Dashboard = () => {
       <div className='columns'>
         <div className='column'>
           <Card title='Total Business Performance'>
-            <MyBarChart />
+            <DashboardItem01 />
           </Card>
         </div>
 
         <div className='column'>
-          <Card title='Sales By Product'>
-            <AreaChart />
+          <Card title='Sales By Group'>
+            <DashboardItem02 />
           </Card>
         </div>
+      </div>
+
+
+      <div className='block'>
+        <Card title='Sales By Category'>
+          <DashboardItem03 />
+        </Card>
       </div>
 
       <div className='columns'>
@@ -43,15 +47,6 @@ const Dashboard = () => {
         </div>
 
         <div className='column'>
-          <Card title='Sales By Category'>
-            <LineChart />
-          </Card>
-        </div>
-      </div>
-
-
-      <div className='columns'>
-        <div className='column is-8'>
           <Card title={AdvCampaignPerformance.title}>
             <Table
               customTableClass={AdvCampaignPerformance.class}
@@ -59,10 +54,14 @@ const Dashboard = () => {
             />
           </Card>
         </div>
+      </div>
+
+
+      <div className='columns'>
 
         <div className='column'>
-          <Card title='Sales By Group'>
-            <DoughnutChart />
+          <Card title='Sales By Product'>
+            <AreaChart />
           </Card>
         </div>
       </div>
@@ -75,34 +74,6 @@ const Dashboard = () => {
             />
           </Card>
         </div>
-
-      <div className='block'>
-        <Card title={SalesByBrand.title}>
-          <Table
-            customTableClass={SalesByBrand.class}
-            columns={SalesByBrand.columns}
-          />
-        </Card>
-      </div> */}
-
-      {/*       <div className='columns'>
-        <div className='column'>
-          <Card title={TopSellers.title}>
-            <Table
-              customTableClass={TopSellers.class}
-              columns={TopSellers.columns}
-            />
-          </Card>
-        </div>
-        <div className='column'>
-          <Card title={WorstSellers.title}>
-            <Table
-              customTableClass={WorstSellers.class}
-              columns={WorstSellers.columns}
-            />
-          </Card>
-        </div>
-      </div>
 
       <div className='block'>
         <Card title={SkuPlatformWise.title}>

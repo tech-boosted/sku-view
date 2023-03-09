@@ -15,32 +15,32 @@ const PeriodDropDown = () => {
         toggleActive("")
     }
     return (
-        <div class={"dropdown mb-4 " + isActive}>
-            <div class="dropdown-trigger">
-                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3" onClick={onDropdownClick} onBlur={onClickElseWhere}>
+        <div className={"dropdown mb-4 " + isActive}>
+            <div className="dropdown-trigger">
+                <button className="button" aria-haspopup="true" aria-controls="dropdown-menu3" onClick={onDropdownClick} onBlur={onClickElseWhere}>
                     <Icon path={mdiCalendarBlank} size={1} />
                     <span className='p-3'>Select Period</span>
-                    <span class="icon is-small">
-                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    <span className="icon is-small">
+                        <i className="fas fa-angle-down" aria-hidden="true"></i>
                     </span>
                 </button>
             </div>
-            <div class="dropdown-menu" id="dropdown-menu3" role="menu">
-                <div class="dropdown-content">
-                    <a href="/" class="dropdown-item">
+            <div className="dropdown-menu" id="dropdown-menu3" role="menu">
+                <div className="dropdown-content">
+                    <a href="/" className="dropdown-item">
                         Yesterday
                     </a>
-                    <a href="/" class="dropdown-item">
+                    <a href="/" className="dropdown-item">
                         Last 7 Days
                     </a>
-                    <a href="/" class="dropdown-item">
+                    <a href="/" className="dropdown-item">
                         Last 28 Days
                     </a>
-                    <a href="/" class="dropdown-item">
+                    <a href="/" className="dropdown-item">
                         Last 90 Days
                     </a>
-                    <hr class="dropdown-divider" />
-                    <a href="/" class="dropdown-item">
+                    <hr className="dropdown-divider" />
+                    <a href="/" className="dropdown-item">
                         Custom
                     </a>
                 </div>
