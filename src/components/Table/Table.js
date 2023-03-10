@@ -1,56 +1,27 @@
 import React from 'react'
+import TableRow from './TableRow';
 
 const Table = (props) => {
 
   var columns = props.columns;
   var columnLength = props.columns.length;
 
-  const renderColumns = () => {
+  const renderRows = () => {
     var arr = [];
-    columns.forEach((col, index) => {
+    for (let i = 0; i < 6; i++) {
       arr.push(
-        <th key={index}>{col}</th>
+        <TableRow key={i} columns={columns} columnLength={columnLength} />
       )
-    });
+    }
     return arr;
   }
 
-  const renderCell = () => {
-    var arr = [];
-    for (let i = 0; i < columnLength; i++) {
-      arr.push(
-        <td key={i}>My Cell</td>
-      )
-    }
-    return arr
-  }
-
-  const renderData = () => {
-    var arr = [];
-    for (let i = 0; i < 5; i++) {
-      arr.push(
-        <tr key={i}>
-          {renderCell()}
-        </tr>
-      )
-    }
-    return arr
-  }
-
   return (
-    <div>
-      <table className={'table is-fullwidth is-hoverable is-bordered ' + props.customTableClass}>
-        <thead>
-          <tr>
-            {renderColumns()}
-          </tr>
-        </thead>
-
-        <tbody>
-          {renderData()}
-        </tbody>
-      </table>
-    </div>
+    <table className={'table is-fullwidth is-hoverable ' + props.display + props.customTableClass}>
+      <tbody>
+        {renderRows()}
+      </tbody>
+    </table>
   )
 }
 
