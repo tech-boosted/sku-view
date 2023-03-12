@@ -1,10 +1,8 @@
 import React from 'react';
-// import Table from './Table';
-import TableBodyExpandable from './TableBodyExpandable';
+import InsightsRow from './InsightsRow';
+import data from './data';
 
-const InsightTable = ({ columns, customClass }) => {
-
-    var columnLength = columns.length;
+const InsightsTable = ({ columns, customClass }) => {
 
     const renderHeaders = () => {
         var arr = [];
@@ -15,6 +13,18 @@ const InsightTable = ({ columns, customClass }) => {
         });
         return arr;
     }
+
+    // const renderRows = () => {
+    //     var arr = [];
+    //     for (let i = 0; i < 6; i++) {
+    //         arr.push(
+    //             <>
+    //                 <TableRowExpandable key={i} columns={columns} columnLength={columnLength} toggleRow={toggleRow} />
+    //             </>
+    //         )
+    //     }
+    //     return arr;
+    // }
     return (
         <table className={'table is-fullwidth is-hoverable ' + customClass}>
             <thead>
@@ -22,11 +32,13 @@ const InsightTable = ({ columns, customClass }) => {
                     {renderHeaders()}
                 </tr>
             </thead>
-            <TableBodyExpandable
-                columns={columns}
-            />
+            <tbody>
+                <InsightsRow columns={columns} data={data[0]} />
+                <InsightsRow columns={columns} data={data[1]} />
+                {/* <InsightsRow columns={columns} data={data[2]} /> */}
+            </tbody>
         </table>
     )
 }
 
-export default InsightTable;
+export default InsightsTable;

@@ -1,5 +1,5 @@
 {
   "title": "SKU Platform Wise",
   "class": "",
-  "columns": ["", "SKU","Impressions", "Clicks", "Spend", "Sales", "Orders"]
+  "columns": ["Sku","Impressions", "Clicks", "Spend", "Sales", "Orders"]
 }
